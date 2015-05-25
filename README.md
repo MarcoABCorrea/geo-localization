@@ -32,8 +32,7 @@ In terminal navigate to 'ui-challenge/yeoman/tests' and start the tests by using
 protractor conf.js
 ```
 > **Note:**
-> - You'll need to have you project and the web-manager running
-> - More info in Protractor site: http://angular.github.io/protractor
+> You'll need to have you project and the web-manager running. More info in Protractor site: http://angular.github.io/protractor
 
 ### Libraries used for this challenge.###
 - ui-map is a directive used to make the map and manage its markers by using the Google Maps API. More details can be found in https://github.com/angular-ui/ui-map
