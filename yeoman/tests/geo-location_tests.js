@@ -81,7 +81,7 @@ describe('Geo Location page', function() {
     });
   });
 
-  it('should remove only the "My Location" mark when added my location and a site location', function () {
+  it('should remove only the "My Location" mark when added my location and a site location and click the "Reset location" button', function () {
     iptSite.sendKeys('www.google.com');
     btnSiteLocation.click().then(function(){
       expect(markers.count()).toBe(1);
