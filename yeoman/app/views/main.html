@@ -10,7 +10,7 @@
         <form class="pull-right col-xs-12 col-sm-6">
             <div class="input-group no-margin">
                 <span class="input-group-addon" style="border:none;background: #fff;background: rgba(0,0,0,.05);"><i class="fa fa-search"></i></span>
-                <input type="text" 
+                <input type="text"
                 ng-pattern="/[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/" ng-model="site" name="siteInput" placeholder="e.g.: www.google.com" class="form-control no-padding-hr" style="border:none;background: #fff;background: rgba(0,0,0,.05);">
             </div>
         </form>
@@ -60,22 +60,22 @@
                     </tr>
                 </tbody>
             </table>
-        </div>    
+        </div>
         <div class="panel-footer text-right">
             <button id="btnMyLocation" class="btn btn-labeled btn-info" ng-click="getMyLocation()">
                 <span class="btn-label icon fa fa-location-arrow"></span>My location
             </button>
             <button id="btnResetLocation" class="btn btn-labeled btn-warning" ng-click="resetLocationDetails()">
                 <span class="btn-label icon fa fa-refresh"></span>Reset location
-            </button>            
-        </div>      
-    </div> 
+            </button>
+        </div>
+    </div>
 </form>
 
 
-<form>
+<form id="formMap">
     <div id="map" style="height:600px;width:100%;"></div>
-    <div id="class" ng-repeat="marker in markers | orderBy : 'title'">
+    <div id="markers" class="markers" ng-repeat="marker in markers | orderBy : 'title'">
          <a href="#" ng-click="openInfoWindow($event, marker)">{{marker.title}}</a>
     </div>
 </form>
