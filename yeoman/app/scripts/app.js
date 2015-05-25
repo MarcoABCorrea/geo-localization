@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-    .module('miamifrontApp', [
+    .module('geoLocationApp', [
         'ngCookies',
         'ngResource',
         'ngSanitize',

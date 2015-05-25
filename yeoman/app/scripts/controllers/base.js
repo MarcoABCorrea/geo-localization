@@ -1,5 +1,5 @@
 'use strict';
 
-angular.module('miamifrontApp')
+angular.module('geoLocationApp')
     .controller('BaseCtrl', function($scope, $translate) {
     });

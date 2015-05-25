@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('miamifrontApp')
+angular.module('geoLocationApp')
 .controller('MainCtrl', function ($scope, $http) {
 
 	////////////////////////	Init map functions

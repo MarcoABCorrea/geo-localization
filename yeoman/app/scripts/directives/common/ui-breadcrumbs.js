@@ -1,4 +1,4 @@
-angular.module('miamifrontApp')
+angular.module('geoLocationApp')
     .directive('uiBreadcrumbs', function($interpolate, $state) {
         return {
             restrict: 'E',
