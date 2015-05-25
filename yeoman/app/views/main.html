@@ -1,0 +1,81 @@
+<form id="formLocation" name="formLocation" class="form-horizontal" ng-init="initializePage()" novalidate>
+    <div class="form-group no-margin-hr">
+
+        <div class="pull-right col-xs-12 col-sm-auto">
+            <button ng-click="getSiteLocation()" class="btn btn-primary btn-labeled" ng-disabled="formLocation.siteInput.$invalid || !site">
+                <span class="btn-label icon fa fa-location-arrow" ></span>Locate
+            </button>
+        </div>
+
+        <form class="pull-right col-xs-12 col-sm-6">
+            <div class="input-group no-margin">
+                <span class="input-group-addon" style="border:none;background: #fff;background: rgba(0,0,0,.05);"><i class="fa fa-search"></i></span>
+                <input type="text" 
+                ng-pattern="/[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/" ng-model="site" name="siteInput" placeholder="e.g.: www.google.com" class="form-control no-padding-hr" style="border:none;background: #fff;background: rgba(0,0,0,.05);">
+            </div>
+        </form>
+    </div>
+
+    <div class="panel">
+        <div class="panel-heading">
+            <span class="panel-title">Estimated Location</span>
+        </div>
+        <div class="panel-body">
+            <table align="center" class="empty">
+                <tbody>
+                    <tr>
+                        <td class="field_name">IP</td>
+                        <td id="location_query" class="location_value">{{data.query}}</td>
+                        <td><button class="help btn" ng-if="data.query != '0.0.0.0'">?</button></td>
+                    </tr>
+                    <tr>
+                        <td class="field_name">Country</td>
+                        <td id="location_country" class="location_value">{{data.country}}</td>
+                        <td><button class="help btn" ng-if="data.country">?</button></td>
+                    </tr>
+                    <tr>
+                        <td class="field_name">Region</td>
+                        <td id="location_regionName" class="location_value">{{data.regionName}}</td>
+                        <td><button class="help btn" ng-if="data.regionName">?</button></td>
+                    </tr>
+                    <tr>
+                        <td class="field_name">City</td>
+                        <td id="location_city" class="location_value">{{data.city}}</td>
+                        <td><button class="help btn" ng-if="data.city">?</button></td>
+                    </tr>
+                    <tr>
+                        <td class="field_name">Time Zone</td>
+                        <td id="location_timezone" class="location_value">{{data.timezone}}</td>
+                        <td><button class="help btn" ng-if="data.timezone">?</button></td>
+                    </tr>
+                    <tr>
+                        <td class="field_name">Latitude</td>
+                        <td id="location_lat" class="location_value">{{data.lat}}</td>
+                        <td><button class="help btn" ng-if="data.lat">?</button></td>
+                    </tr>
+                    <tr>
+                        <td class="field_name">Longitude</td>
+                        <td id="location_lon" class="location_value">{{data.lon}}</td>
+                        <td><button class="help btn" ng-if="data.lon">?</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>    
+        <div class="panel-footer text-right">
+            <button id="btnMyLocation" class="btn btn-labeled btn-info" ng-click="getMyLocation()">
+                <span class="btn-label icon fa fa-location-arrow"></span>My location
+            </button>
+            <button id="btnResetLocation" class="btn btn-labeled btn-warning" ng-click="resetLocationDetails()">
+                <span class="btn-label icon fa fa-refresh"></span>Reset location
+            </button>            
+        </div>      
+    </div> 
+</form>
+
+
+<form>
+    <div id="map" style="height:600px;width:100%;"></div>
+    <div id="class" ng-repeat="marker in markers | orderBy : 'title'">
+         <a href="#" ng-click="openInfoWindow($event, marker)">{{marker.title}}</a>
+    </div>
+</form>
