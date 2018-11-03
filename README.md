@@ -1,4 +1,4 @@
-# Avenue Code UI Challenge - Part I #
+# Geo Localization #
 ### How to compile and run the application.###
 In this project was used AngularJS, Bootstrap, Node.js, grunt and bower.
 You'll need to install node and bower dependencies. Just go to the project folder and run:
