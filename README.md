@@ -52,5 +52,5 @@ webdriver-manager start
 In terminal navigate to 'yeoman/tests' and start the tests by using:	
 
 ```
-protractor conf.js	grunt serve
+protractor conf.js
 ```
